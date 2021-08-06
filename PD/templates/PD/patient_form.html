@@ -1,0 +1,16 @@
+{%extends "PD/base.html" %} {% load crispy_forms_tags %} {% block content%}
+<div class="content-section">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Patient Details</legend>
+      
+      {{ form.media|safe}}
+      {{form|crispy}}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-dark" type="submit"><h5>Add</h5></button>
+    </div>
+  </form>
+</div>
+{% endblock%}

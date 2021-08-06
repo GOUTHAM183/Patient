@@ -1,0 +1,16 @@
+{% extends "PD/base.html" %} 
+{% block content%}
+    {% if searched %}
+        <h1>You Searched For -> {{ searched }}</h1>
+        {% for patient in patients %}
+            <h3 >-> <a style="color:black;" href="{% url 'patient-detail' patient.id %}">{{ patient }}</a></h3>
+            <br>
+            <br>
+        {% endfor %}
+        
+    {% else %}
+        <h1>You forgot to enter value into search bar!! </h1>
+        <script>for(var x=0;x<=25;x++){document.write("<br>")}</script>
+    {% endif %}
+{% endblock%}
+

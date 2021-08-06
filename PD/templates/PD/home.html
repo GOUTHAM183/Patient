@@ -1,0 +1,22 @@
+{%extends "PD/base.html" %} {% block content%} 
+<h1>Patient List</h1>
+{% for patient in patients%}
+<article class="media content-section" >
+  
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="article-title" href="{% url 'patient-detail' patient.id %}"
+      ><h4>Name: {{ patient.firstname }}</h4></a>
+      <br>
+      <h5>Disease: {{ patient.disease }}</h5>
+       <h5>Doctor: {{ patient.doctor }}</h5>
+      
+    </div>
+    
+  </div>
+ 
+</article>
+
+  {% endfor %} 
+  
+{% endblock%}
